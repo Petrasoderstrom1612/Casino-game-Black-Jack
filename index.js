@@ -1,6 +1,8 @@
 let messageEl = document.getElementById("message-el")
 let sumEl = document.querySelector("#sum-el")
 let cardsEl = document.querySelector("#cards-el")
+let headlineForPreviousEl = document.getElementById("headline-for-previous-el")
+let previousCountEl = document.getElementById("previous-count-el")
 
 let cards
 let sum
@@ -65,7 +67,9 @@ function newCard() {
 }
 
 function resetGame() {
+    previousCounts()
     isAlive = false
+    hasBlackJack = false
     let firstCard = 0
     let secondCard = 0
     cards = [firstCard, secondCard]
@@ -75,3 +79,18 @@ function resetGame() {
     cardsEl.innerHTML = "Cards: "
     sumEl.innerHTML = `Sum: `
 }
+
+function previousCounts() {
+    headlineForPreviousEl.textContent = "Previous games' points: "
+    let previousPoints = sum
+    let color
+    if (sum === 21) {
+        color = "yellow"  
+    } else {
+        color = "red"
+    }
+    previousCountEl.innerHTML += `<span class="${color}">${previousPoints} </span>`
+}
+
+//total games played
+//total amount of points
