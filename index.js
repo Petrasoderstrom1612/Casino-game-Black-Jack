@@ -52,7 +52,7 @@ function renderGame() {
 }
 
 function newCard() {
-    if (isAlive && !hasBlackJack) { //you need to have the if here, hence empty function when conditions not fullfilled since we call on the function from html
+    if (isAlive && !hasBlackJack) { 
     let thirdcard = createRandomNumber()
     sum += thirdcard
     cards.push(thirdcard)
