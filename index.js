@@ -1,23 +1,43 @@
 let messageEl = document.getElementById("message-el")
 let sumEl = document.querySelector("#sum-el")
-let cardsEl = document.querySelector ("#cards-el")
+let cardsEl = document.querySelector("#cards-el")
 
-let firstCard = 10
-let secondCard = 4
-let cards = [firstCard, secondCard]
-let sum = firstCard + secondCard
+let cards
+let sum
 let hasBlackJack = false
-let isAlive = true
-let message = ""
+let isAlive = false
 
-function startGame() { //you want the html button to have onclick startgame() but after the start the function is reused so you change the name for calling on it(just to make it semantically correct)
+console.log(cards)
+
+function createRandomNumber() {
+    let randomNumber = Math.ceil(Math.random() * 13)
+    if (randomNumber === 1) {
+        randomNumber = 11
+    }
+    if(randomNumber > 10){
+        randomNumber = 10
+    }
+    return randomNumber
+}
+
+function startGame() { 
+    isAlive = true
+    let firstCard = createRandomNumber() 
+    let secondCard = createRandomNumber()
+    cards = [firstCard, secondCard]
+    sum = firstCard + secondCard
+    console.log(isAlive)
     renderGame()
 }
 
 function renderGame() {
-    cardsEl.innerHTML = `Cards: ${cards[0]} ${cards[1]}`
+    cardsEl.innerHTML = "Cards: "
+    for(let i = 0; i < cards.length; i++){
+        cardsEl.innerHTML += cards[i] + " "
+    }
+    
+    let message = ""
     sumEl.innerHTML = `Sum: ${sum}`
-
     if (sum <= 20) {
         message = "Do you want to draw a new card?"
     } else if (sum === 21) {
@@ -32,12 +52,10 @@ function renderGame() {
 }
 
 function newCard() {
-    console.log("new card")
-
-    let thirdcard = 3
+    if (isAlive && !hasBlackJack) { //you need to have the if here, hence empty function when conditions not fullfilled since we call on the function from html
+    let thirdcard = createRandomNumber()
     sum += thirdcard
-    console.log(sum)
     cards.push(thirdcard)
-    console.log(cards)
     renderGame()
+    }
 }
