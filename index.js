@@ -40,12 +40,15 @@ function renderGame() {
     sumEl.innerHTML = `Sum: ${sum}`
     if (sum <= 20) {
         message = "Do you want to draw a new card?"
+        messageEl.className = "green"
     } else if (sum === 21) {
-        message = "Wohoo! You've got Blackjack!"
+        message = "Wohoo! You've got Blackjack! 🎉"
         hasBlackJack = true
+        messageEl.className = "yellow"
     } else {
         message = "You're out of the game!"
         isAlive = false
+        messageEl.className = "red"
     }
     console.log(message)
     messageEl.innerText = message
@@ -58,4 +61,17 @@ function newCard() {
     cards.push(thirdcard)
     renderGame()
     }
+
+}
+
+function resetGame() {
+    isAlive = false
+    let firstCard = 0
+    let secondCard = 0
+    cards = [firstCard, secondCard]
+    sum = 0
+    messageEl.innerText = "Press Start to launch the game"
+    messageEl.className = "white"
+    cardsEl.innerHTML = "Cards: "
+    sumEl.innerHTML = `Sum: `
 }

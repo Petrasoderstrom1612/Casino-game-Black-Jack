@@ -22,3 +22,19 @@ button {
     border-radius: 2px;
     margin-bottom:4px;
 }
+
+.green{
+    color: #8bff8b;
+}
+
+.red {
+    color: rgb(80 7 29);
+}
+
+.yellow {
+    color: orange;
+}
+
+.white{
+    color: white;
+}
