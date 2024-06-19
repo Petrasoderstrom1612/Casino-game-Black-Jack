@@ -137,8 +137,8 @@ function createRandomNumber2() {
 
 function startGame2() { 
     isAlive2 = true
-    let firstCard2 = 11
-    let secondCard2 = 10
+    let firstCard2 = createRandomNumber2()
+    let secondCard2 = createRandomNumber2()
     cards2 = [firstCard2, secondCard2]
     sum2 = firstCard2 + secondCard2
     renderGame2()
