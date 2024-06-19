@@ -23,12 +23,28 @@ button {
     margin-bottom:4px;
 }
 
+.headline-img{
+    border-radius: 5px;
+}
+
+.mobile-margin{
+    margin:30px;
+}
+
 .statistics{
     padding-top: 1.5%;
 }
 
 .green{
     color: #8bff8b;
+}
+
+.light-green{
+    background: #90ee9036;
+}
+
+.light-red{
+    background: #ff022f59;
 }
 
 .red {
@@ -46,3 +62,40 @@ button {
 .black{
     color:black;
 }
+
+.main{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.player-field{
+    padding-left:20px;
+    padding-right:20px;
+    margin-left:20px;
+    margin-right:20px;
+}
+
+@media only screen and (min-width: 601px) {
+    .player-field{
+        width:40%;
+    } 
+}
+
+@media only screen and (max-width: 600px) {
+    .mobile-tighter > p{
+      line-height: 1;
+      padding: 0;
+      margin: 0;
+    }
+
+    .mobile-tighter {
+        margin-top: 1vh;
+        margin-bottom:1vh
+    }
+
+    .mobile-margin{
+        margin:0;
+    }
+  }

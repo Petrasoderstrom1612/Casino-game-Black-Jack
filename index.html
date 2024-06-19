@@ -5,18 +5,41 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <h1>Blackjack</h1>
-        <p id="message-el">Want to play a round? <br> Press <span style="font-size: 17px;">Start</span> to launch the game. <br> You need 21 points to win!</p>
-        <p id="cards-el">Cards: </p>
-        <p id="sum-el">Sum: </p>
-        <button onclick="startGame()">START GAME</button>
-        <button onclick="newCard()">NEW CARD</button>
-        <button onclick="resetGame()">RESET</button>
-        <p class="black" id="headline-for-previous-el"></p>
-        <p id="previous-count-el"></p>
-        <p class="statistics black" id="total-games-played-el"></p>
-        <p class="black" id="total-victories-el"></p>
-        <p class="black" id="success-rate-el"></p>
+        <img class="headline-img mobile-margin" src="img/Blackjack-headline.png" alt="Black Jack headline">
+        <div class="main">
+            <div class="player-field" id="player1-background-el">
+                <h2>Player 1</h2>
+                <p id="message-el1">Want to play a round? <br> Press <span style="font-size: 17px;">Start</span> to launch the game. <br> You need 21 points to win!</p>
+                <p id="cards-el1">Cards: </p>
+                <p id="sum-el1">Sum: </p>
+                <button onclick="startGame1()">START GAME</button>
+                <button onclick="newCard1()">NEW CARD</button>
+                <button onclick="resetGame1()">RESET</button>
+                <div class="mobile-tighter">
+                    <p class="black" id="headline-for-previous-el1"></p>
+                    <p id="previous-count-el1"></p>
+                    <p class="statistics black" id="total-games-played-el1"></p>
+                    <p class="black" id="total-victories-el1"></p>
+                    <p class="black" id="success-rate-el1"></p>
+                </div>
+            </div>
+            <div class="player-field" id="player2-background-el">
+                <h2>Player 2</h2>
+                <p id="message-el2">Want to play a round? <br> Press <span style="font-size: 17px;">Start</span> to launch the game. <br> You need 21 points to win!</p>
+                <p id="cards-el2">Cards: </p>
+                <p id="sum-el2">Sum: </p>
+                <button onclick="startGame2()">START GAME</button>
+                <button onclick="newCard2()">NEW CARD</button>
+                <button onclick="resetGame2()">RESET</button>
+                <div class="mobile-tighter">
+                    <p class="black" id="headline-for-previous-el2"></p>
+                    <p id="previous-count-el2"></p>
+                    <p class="statistics black" id="total-games-played-el2"></p>
+                    <p class="black" id="total-victories-el2"></p>
+                    <p class="black" id="success-rate-el2"></p>
+                </div>
+            </div>
+        </div>
         <script src="index.js"></script>
     </body>
 </html>
