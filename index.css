@@ -39,11 +39,11 @@ button {
     color: #8bff8b;
 }
 
-.light-green{
+.player-field.light-green{
     background: #90ee9036;
 }
 
-.light-red{
+.player-field.light-red{
     background: #ff022f59;
 }
 
