@@ -1,10 +1,11 @@
 let messageEl = document.getElementById("message-el")
-let sumEl = document.querySelector("#sum-el")
 let cardsEl = document.querySelector("#cards-el")
+let sumEl = document.querySelector("#sum-el")
 let headlineForPreviousEl = document.getElementById("headline-for-previous-el")
 let previousCountEl = document.getElementById("previous-count-el")
 let totalGamesPlayedEl = document.getElementById("total-games-played-el")
 let totalVictoriesEl = document.getElementById("total-victories-el")
+let successRateEl = document.getElementById("success-rate-el")
 
 let cards
 let sum
@@ -12,6 +13,7 @@ let hasBlackJack = false
 let isAlive = false
 let totalGamesPlayed = 0
 let totalVictories = 0
+let successRate 
 
 console.log(cards)
 
@@ -97,7 +99,9 @@ function previousCounts() {
     previousCountEl.innerHTML += `<span class="${color}">${previousPoints} </span>`
     totalGamesPlayed++
     totalGamesPlayedEl.innerHTML = "Total games played: " + totalGamesPlayed
-    totalVictoriesEl.innerHTML = "Games won: " + totalVictories
+    totalVictoriesEl.innerHTML = "Games won: " + totalVictories + " / " + totalGamesPlayed
+    successRate = Math.round(totalVictories / totalGamesPlayed * 100)
+    successRateEl.innerHTML = "Success rate: " + successRate + "%"
 }
 
 

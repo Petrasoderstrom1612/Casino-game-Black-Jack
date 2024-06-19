@@ -23,6 +23,10 @@ button {
     margin-bottom:4px;
 }
 
+.statistics{
+    padding-top: 1.5%;
+}
+
 .green{
     color: #8bff8b;
 }
