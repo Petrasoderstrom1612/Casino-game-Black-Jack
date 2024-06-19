@@ -3,11 +3,15 @@ let sumEl = document.querySelector("#sum-el")
 let cardsEl = document.querySelector("#cards-el")
 let headlineForPreviousEl = document.getElementById("headline-for-previous-el")
 let previousCountEl = document.getElementById("previous-count-el")
+let totalGamesPlayedEl = document.getElementById("total-games-played-el")
+let totalVictoriesEl = document.getElementById("total-victories-el")
 
 let cards
 let sum
 let hasBlackJack = false
 let isAlive = false
+let totalGamesPlayed = 0
+let totalVictories = 0
 
 console.log(cards)
 
@@ -47,6 +51,7 @@ function renderGame() {
         message = "Wohoo! You've got Blackjack! 🎉"
         hasBlackJack = true
         messageEl.className = "yellow"
+        totalVictories++
     } else {
         message = "You're out of the game!"
         isAlive = false
@@ -90,7 +95,10 @@ function previousCounts() {
         color = "red"
     }
     previousCountEl.innerHTML += `<span class="${color}">${previousPoints} </span>`
+    totalGamesPlayed++
+    totalGamesPlayedEl.innerHTML = "Total games played: " + totalGamesPlayed
+    totalVictoriesEl.innerHTML = "Games won: " + totalVictories
 }
 
-//total games played
+
 //total amount of points
