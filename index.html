@@ -8,6 +8,11 @@
 
 <body>
     <img class="headline-img mobile-margin" src="img/Blackjack-headline.png" alt="Black Jack headline">
+    <div id="intro-text-el" >
+    <p class="show">Want to play a round? <br> Press <span style="font-size: 17px;">Start</span> to launch the game. <br> You need 21 points to win!</p>
+    <button onclick="launchGame()">START</button>
+    </div>
+    <div id="game-plan-el" class="hide">
     <div>
         <button onclick="startGame1()">START GAME</button>
         <button onclick="newCard1()">NEW CARD</button>
@@ -16,8 +21,7 @@
     <div class="main">
         <div class="player-field" id="player1-background-el">
             <h2>Player 1</h2>
-            <p id="message-el1">Want to play a round? <br> Press <span style="font-size: 17px;">Start</span> to launch
-                the game. <br> You need 21 points to win!</p>
+            <p id="message-el1">Press Start Game</p>
             <div id="ace-choice-el" class="hide">
                 <button>1</button>
                 <button>11</button>
@@ -32,6 +36,7 @@
                 <p class="black" id="success-rate-el1"></p>
             </div>
         </div>
+    </div>
         <!-- <div class="player-field" id="player2-background-el">
                 <h2>Player 2</h2>
                 <p id="message-el2">Want to play a round? <br> Press <span style="font-size: 17px;">Start</span> to launch the game. <br> You need 21 points to win!</p>

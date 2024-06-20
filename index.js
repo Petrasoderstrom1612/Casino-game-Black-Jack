@@ -9,6 +9,8 @@ let totalVictoriesEl1 = document.getElementById("total-victories-el1")
 let successRateEl1 = document.getElementById("success-rate-el1")
 let playerBackground1El = document.getElementById("player1-background-el")
 let aceChoiceEl = document.getElementById("ace-choice-el")
+let introTextEl = document.getElementById("intro-text-el")
+let gamePlanEl = document.getElementById("game-plan-el")
 
 let cards1
 let sum1
@@ -17,11 +19,15 @@ let isAlive1 = false
 let totalGamesPlayed1 = 0
 let totalVictories1 = 0
 let successRate1 
+let randomNumber 
 
-console.log(cards1)
+function launchGame() {
+    introTextEl.className = "hide"
+    gamePlanEl.className = "show"
+}
 
 function createRandomNumber1() {
-    let randomNumber = Math.ceil(Math.random() * 13)
+    randomNumber = Math.ceil(Math.random() * 13)
     if (randomNumber === 1) {
         aceChoiceEl.className = "show"
         randomNumber = 11
