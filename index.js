@@ -8,9 +8,6 @@ let totalGamesPlayedEl1 = document.getElementById("total-games-played-el1")
 let totalVictoriesEl1 = document.getElementById("total-victories-el1")
 let successRateEl1 = document.getElementById("success-rate-el1")
 let playerBackground1El = document.getElementById("player1-background-el")
-let aceChoiceEl = document.getElementById("ace-choice-el")
-let introTextEl = document.getElementById("intro-text-el")
-let gamePlanEl = document.getElementById("game-plan-el")
 
 let cards1
 let sum1
@@ -19,17 +16,12 @@ let isAlive1 = false
 let totalGamesPlayed1 = 0
 let totalVictories1 = 0
 let successRate1 
-let randomNumber 
 
-function launchGame() {
-    introTextEl.className = "hide"
-    gamePlanEl.className = "show"
-}
+console.log(cards1)
 
 function createRandomNumber1() {
-    randomNumber = Math.ceil(Math.random() * 13)
+    let randomNumber = Math.ceil(Math.random() * 13)
     if (randomNumber === 1) {
-        aceChoiceEl.className = "show"
         randomNumber = 11
     }
     if(randomNumber > 10){
@@ -114,120 +106,119 @@ function previousCounts1() {
 }
 
 // Player 2
-// let messageEl2 = document.getElementById("message-el2")
-// let cardsEl2 = document.querySelector("#cards-el2")
-// let sumEl2 = document.querySelector("#sum-el2")
-// let headlineForPreviousEl2 = document.getElementById("headline-for-previous-el2")
-// let previousCountEl2 = document.getElementById("previous-count-el2")
-// let totalGamesPlayedEl2 = document.getElementById("total-games-played-el2")
-// let totalVictoriesEl2 = document.getElementById("total-victories-el2")
-// let successRateEl2 = document.getElementById("success-rate-el2")
-// let playerBackground2El = document.getElementById("player2-background-el")
+let messageEl2 = document.getElementById("message-el2")
+let cardsEl2 = document.querySelector("#cards-el2")
+let sumEl2 = document.querySelector("#sum-el2")
+let headlineForPreviousEl2 = document.getElementById("headline-for-previous-el2")
+let previousCountEl2 = document.getElementById("previous-count-el2")
+let totalGamesPlayedEl2 = document.getElementById("total-games-played-el2")
+let totalVictoriesEl2 = document.getElementById("total-victories-el2")
+let successRateEl2 = document.getElementById("success-rate-el2")
+let playerBackground2El = document.getElementById("player2-background-el")
 
-// let cards2
-// let sum2
-// let hasBlackJack2 = false
-// let isAlive2 = false
-// let totalGamesPlayed2 = 0
-// let totalVictories2 = 0
-// let successRate2
+let cards2
+let sum2
+let hasBlackJack2 = false
+let isAlive2 = false
+let totalGamesPlayed2 = 0
+let totalVictories2 = 0
+let successRate2
 
-// function createRandomNumber2() {
-//     let randomNumber = Math.ceil(Math.random() * 13)
-//     if (randomNumber === 1) {
-//         randomNumber = 11
-//     }
-//     if(randomNumber > 10){
-//         randomNumber = 10
-//     }
-//     return randomNumber
-// }
+function createRandomNumber2() {
+    let randomNumber = Math.ceil(Math.random() * 13)
+    if (randomNumber === 1) {
+        randomNumber = 11
+    }
+    if(randomNumber > 10){
+        randomNumber = 10
+    }
+    return randomNumber
+}
 
-// function startGame2() { 
-//     isAlive2 = true
-//     let firstCard2 = createRandomNumber2()
-//     let secondCard2 = createRandomNumber2()
-//     cards2 = [firstCard2, secondCard2]
-//     sum2 = firstCard2 + secondCard2
-//     renderGame2()
-// }
+function startGame2() { 
+    isAlive2 = true
+    let firstCard2 = createRandomNumber2()
+    let secondCard2 = createRandomNumber2()
+    cards2 = [firstCard2, secondCard2]
+    sum2 = firstCard2 + secondCard2
+    renderGame2()
+}
 
-// function renderGame2() {
-//     cardsEl2.innerHTML = "Cards: "
-//     for(let i = 0; i < cards2.length; i++){
-//         cardsEl2.innerHTML += cards2[i] + " "
-//     }
+function renderGame2() {
+    cardsEl2.innerHTML = "Cards: "
+    for(let i = 0; i < cards2.length; i++){
+        cardsEl2.innerHTML += cards2[i] + " "
+    }
     
-//     let message2 = ""
-//     sumEl2.innerHTML = `Sum: ${sum2}`
-//     if (sum2 <= 20) {
-//         message2 = "Do you want to draw a new card?"
-//         messageEl2.className = "green"
-//     } else if (sum2 === 21) {
-//         message2 = "Wohoo! You've got Blackjack! 🎉"
-//         hasBlackJack2 = true
-//         messageEl2.className = "yellow"
-//         totalVictories2++
-//     } else {
-//         message2 = "You're out of the game!"
-//         isAlive2 = false
-//         messageEl2.className = "red"
-//     }
-//     messageEl2.innerText = message2
-// }
+    let message2 = ""
+    sumEl2.innerHTML = `Sum: ${sum2}`
+    if (sum2 <= 20) {
+        message2 = "Do you want to draw a new card?"
+        messageEl2.className = "green"
+    } else if (sum2 === 21) {
+        message2 = "Wohoo! You've got Blackjack! 🎉"
+        hasBlackJack2 = true
+        messageEl2.className = "yellow"
+        totalVictories2++
+    } else {
+        message2 = "You're out of the game!"
+        isAlive2 = false
+        messageEl2.className = "red"
+    }
+    messageEl2.innerText = message2
+}
 
-// function newCard2() {
-//     if (isAlive2 && !hasBlackJack2) { 
-//         let thirdCard2 = createRandomNumber2()
-//         sum2 += thirdCard2
-//         cards2.push(thirdCard2)
-//         renderGame2()
-//     }
-// }
+function newCard2() {
+    if (isAlive2 && !hasBlackJack2) { 
+        let thirdCard2 = createRandomNumber2()
+        sum2 += thirdCard2
+        cards2.push(thirdCard2)
+        renderGame2()
+    }
+}
 
-// function resetGame2() {
-//     previousCounts2()
-//     isAlive2 = false
-//     hasBlackJack2 = false
-//     let firstCard2 = 0
-//     let secondCard2 = 0
-//     cards2 = [firstCard2, secondCard2]
-//     sum2 = 0
-//     messageEl2.innerText = "Press Start to launch the game"
-//     messageEl2.className = "white"
-//     cardsEl2.innerHTML = "Cards: "
-//     sumEl2.innerHTML = `Sum: `
-//     winnerBackground()
-// }
+function resetGame2() {
+    previousCounts2()
+    isAlive2 = false
+    hasBlackJack2 = false
+    let firstCard2 = 0
+    let secondCard2 = 0
+    cards2 = [firstCard2, secondCard2]
+    sum2 = 0
+    messageEl2.innerText = "Press Start to launch the game"
+    messageEl2.className = "white"
+    cardsEl2.innerHTML = "Cards: "
+    sumEl2.innerHTML = `Sum: `
+    winnerBackground()
+}
 
-// function previousCounts2() {
-//     headlineForPreviousEl2.textContent = "Previous games' points: "
-//     let previousPoints2 = sum2
-//     let color
-//     if (sum2 === 21) {
-//         color = "yellow"  
-//     } else {
-//         color = "red"
-//     }
-//     previousCountEl2.innerHTML += `<span class="${color}">${previousPoints2} </span>`
-//     totalGamesPlayed2++
-//     totalGamesPlayedEl2.innerHTML = "Total games played: " + totalGamesPlayed2
-//     totalVictoriesEl2.innerHTML = "Games won: " + totalVictories2 + " / " + totalGamesPlayed2
-//     successRate2 = Math.round(totalVictories2 / totalGamesPlayed2 * 100)
-//     successRateEl2.innerHTML = "Success rate: " + successRate2 + "%"
-// }
+function previousCounts2() {
+    headlineForPreviousEl2.textContent = "Previous games' points: "
+    let previousPoints2 = sum2
+    let color
+    if (sum2 === 21) {
+        color = "yellow"  
+    } else {
+        color = "red"
+    }
+    previousCountEl2.innerHTML += `<span class="${color}">${previousPoints2} </span>`
+    totalGamesPlayed2++
+    totalGamesPlayedEl2.innerHTML = "Total games played: " + totalGamesPlayed2
+    totalVictoriesEl2.innerHTML = "Games won: " + totalVictories2 + " / " + totalGamesPlayed2
+    successRate2 = Math.round(totalVictories2 / totalGamesPlayed2 * 100)
+    successRateEl2.innerHTML = "Success rate: " + successRate2 + "%"
+}
 
-// function winnerBackground(){
-//     if(successRate1 > successRate2){
-//         playerBackground1El.classList.add("light-green")
-//         playerBackground2El.classList.add("light-red")
-//         console.log(playerBackground1El)
-//         console.log(playerBackground2El)
-//     } else if(successRate1 < successRate2) {
-//         playerBackground2El.classList.add("light-green")
-//         playerBackground1El.classList.add("light-red")
-//         console.log(playerBackground1El)
-//         console.log(playerBackground2El)
-//     }
-// }
-
+function winnerBackground(){
+    if(successRate1 > successRate2){
+        playerBackground1El.classList.add("light-green")
+        playerBackground2El.classList.add("light-red")
+        console.log(playerBackground1El)
+        console.log(playerBackground2El)
+    } else if(successRate1 < successRate2) {
+        playerBackground2El.classList.add("light-green")
+        playerBackground1El.classList.add("light-red")
+        console.log(playerBackground1El)
+        console.log(playerBackground2El)
+    }
+}
